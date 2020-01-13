@@ -106,3 +106,17 @@ $(function() {
         time: 2000
       });
   });
+
+/*Clients Section*/
+$(function() { //this is document.ready method of jscript written in jquery form
+  $("#clients-list").owlCarousel({
+    items: 6,
+    autoplay: false,
+    smartspeed: 700,
+    loop: true,
+    autoplayHoverPause: true,
+    nav: true,
+    dots: false,
+    navText: ['<i class="fa fa-angle-left fa-3x"></i>', '<i class="fa fa-angle-right fa-3x"></i>']
+  });
+});
