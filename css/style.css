@@ -155,6 +155,15 @@ section {
   border: 1px solid #f4c613;
 }
 
+.btn-back-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 3px 15px;
+  border-radius: 4px;
+  font-size: 22px;
+}
+
 #arrow-down {
   position: absolute;
   left: 50%;
@@ -1051,7 +1060,7 @@ footer p span{
 
 /*Navigation Bar*/
 .navbar{
-  padding:25px 0 20px 0;
+  padding:15px 0 20px 0;
   transition: all 300ms linear;
 }
 .site-nav-wrapper{
@@ -1088,4 +1097,9 @@ ul.navbar-nav>li>a:focus {
 .white-nav-top ul.navbar-nav > li >a:hover,
 .white-nav-top ul.navbar-nav > li >a:focus{
   color: #f4c613;
+}
+/*Scroll spy active state*/
+.white-nav-top ul.navbar-nav > li.active > a{
+  color: #f4c613;
+  font-weight: 500;
 }

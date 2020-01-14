@@ -121,25 +121,6 @@ $(function() { //this is document.ready method of jscript written in jquery form
   });
 });
 
-/*Show and hide white navigation
-$(function(){
-
-  $(window).scroll(function(){
-    if($(window).scrollTop()>50){
-
-      $("nav").addClass("white-nav-top");
-
-      //show dark Logo
-      $(".navbar-brand img").attr("src", "images/logo/logo-dark.png");
-    }else{
-      $("nav").removeClass("white-nav-top");
-      $(".navbar-brand img").attr("src", "images/logo/logo.png");
-
-    }
-
-  });
-
-});*/
 
 
 /* Show & Hide White Navigation */
@@ -157,12 +138,28 @@ $(function () {
             $("nav").addClass("white-nav-top");
             // Show dark logo
             $(".navbar-brand img").attr("src", "images/logo/logo-dark.png");
-
+            // Show back to top button
+            $("#back-to-top").fadeIn();
         } else {
             // Hide white nav
             $("nav").removeClass("white-nav-top");
             // Show logo
             $(".navbar-brand img").attr("src", "images/logo/logo.png");
+            // Hide back to top button
+            $("#back-to-top").fadeOut();
         }
     }
+});
+
+/*Smooth Scrolling*/
+$(function () {
+  $("a.smooth-scroll").click(function (event) {
+        event.preventDefault();
+        // get section id like #about, #servcies, #work, #team and etc.
+        var section_id = $(this).attr("href");
+        $("html, body").animate({
+            scrollTop: $(section_id).offset().top - 64
+        }, 1250, "easeInOutExpo");
+    });
+
 });
