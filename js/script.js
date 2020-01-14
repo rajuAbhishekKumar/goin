@@ -120,3 +120,49 @@ $(function() { //this is document.ready method of jscript written in jquery form
     navText: ['<i class="fa fa-angle-left fa-3x"></i>', '<i class="fa fa-angle-right fa-3x"></i>']
   });
 });
+
+/*Show and hide white navigation
+$(function(){
+
+  $(window).scroll(function(){
+    if($(window).scrollTop()>50){
+
+      $("nav").addClass("white-nav-top");
+
+      //show dark Logo
+      $(".navbar-brand img").attr("src", "images/logo/logo-dark.png");
+    }else{
+      $("nav").removeClass("white-nav-top");
+      $(".navbar-brand img").attr("src", "images/logo/logo.png");
+
+    }
+
+  });
+
+});*/
+
+
+/* Show & Hide White Navigation */
+$(function () {
+    // show/hide nav on page load
+    showHideNav();
+    $(window).scroll(function () {
+        // show/hide nav on window's scroll
+        showHideNav();
+    });
+    function showHideNav() {
+
+        if ($(window).scrollTop() > 50) {
+            // Show white nav
+            $("nav").addClass("white-nav-top");
+            // Show dark logo
+            $(".navbar-brand img").attr("src", "images/logo/logo-dark.png");
+
+        } else {
+            // Hide white nav
+            $("nav").removeClass("white-nav-top");
+            // Show logo
+            $(".navbar-brand img").attr("src", "images/logo/logo.png");
+        }
+    }
+});
